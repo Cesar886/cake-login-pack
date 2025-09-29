@@ -1,0 +1,33 @@
+# Vercel ignore file
+# Files and directories to ignore during deployment
+
+# Development files
+app/tmp/
+app/logs/
+*.log
+
+# Composer dev dependencies
+app/vendor/phpunit/
+app/vendor/squizlabs/
+app/vendor/slevomat/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Local config
+.env.local
+app_local.php.bak
+
+# README development files
+README-dev.md
