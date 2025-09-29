@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.6.0"
+    }
+  },
+  "routes": [
+    {
+      "src": "/css/(.*)",
+      "dest": "/app/webroot/css/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/app/webroot/js/$1"
+    },
+    {
+      "src": "/img/(.*)",
+      "dest": "/app/webroot/img/$1"
+    },
+    {
+      "src": "/font/(.*)",
+      "dest": "/app/webroot/font/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/app/webroot/favicon.ico"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ],
+  "env": {
+    "APP_NAME": "CakeLogin",
+    "DEBUG": "true",
+    "APP_ENCODING": "UTF-8",
+    "APP_DEFAULT_LOCALE": "es_ES",
+    "APP_DEFAULT_TIMEZONE": "UTC",
+    "SECURITY_SALT": "your-security-salt-here-change-this-in-production"
+  },
+  "build": {
+    "env": {
+      "APP_ENV": "production"
+    }
+  }
+}
