@@ -1,0 +1,12 @@
+{
+  "name": "cake-login-pack",
+  "version": "1.0.0",
+  "description": "CakePHP Login System for Vercel",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "echo 'No build required for PHP'",
+    "start": "echo 'Use Vercel functions'"
+  }
+}

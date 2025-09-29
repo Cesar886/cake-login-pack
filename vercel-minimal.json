@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.php": {}
+  },
+  "routes": [
+    {
+      "src": "/(css|js|img|font)/(.*)",
+      "dest": "/app/webroot/$1/$2"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/app/webroot/favicon.ico"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ]
+}

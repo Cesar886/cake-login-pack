@@ -88,3 +88,44 @@ return [
 
 - [Documentación de Vercel PHP](https://vercel.com/docs/runtimes/php)
 - [CakePHP 5 Documentation](https://book.cakephp.org/5/)
+
+## 🛠 Troubleshooting
+
+### Error de runtime PHP "nodejs18.x discontinued"
+
+Si obtienes este error al hacer `vercel build`:
+```
+Error: The Runtime "vercel-php@0.6.0" is using "nodejs18.x", which is discontinued
+```
+
+**Solución 1 - Limpiar cache de Vercel CLI:**
+```bash
+vercel logout
+vercel login
+rm -rf .vercel
+vercel --prod
+```
+
+**Solución 2 - Usar configuración mínima:**
+```bash
+# Renombrar archivos para probar configuración mínima
+mv vercel.json vercel-full.json
+mv vercel-minimal.json vercel.json
+vercel --prod
+```
+
+**Solución 3 - Actualizar Vercel CLI:**
+```bash
+npm i -g vercel@latest
+vercel --version  # Debe ser >= 34.0.0
+```
+
+**Solución 4 - Deploy desde Vercel Dashboard:**
+- Ve a vercel.com y haz el deploy desde la interfaz web
+- Esto usa la versión más reciente del runtime automáticamente
+
+### Otros problemas comunes
+
+**Error de permisos:** Los directorios temporales se crean automáticamente en `/tmp/`
+
+**Debug en producción:** Ve a Vercel Dashboard > Functions > View Logs

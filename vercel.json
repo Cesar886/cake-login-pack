@@ -1,26 +1,14 @@
 {
   "version": 2,
   "functions": {
-    "api/*.php": {
-      "runtime": "vercel-php@0.7.0"
+    "api/index.php": {
+      "runtime": "vercel-php@0.8.0"
     }
   },
   "routes": [
     {
-      "src": "/css/(.*)",
-      "dest": "/app/webroot/css/$1"
-    },
-    {
-      "src": "/js/(.*)",
-      "dest": "/app/webroot/js/$1"
-    },
-    {
-      "src": "/img/(.*)",
-      "dest": "/app/webroot/img/$1"
-    },
-    {
-      "src": "/font/(.*)",
-      "dest": "/app/webroot/font/$1"
+      "src": "/(css|js|img|font)/(.*)",
+      "dest": "/app/webroot/$1/$2"
     },
     {
       "src": "/favicon.ico",
